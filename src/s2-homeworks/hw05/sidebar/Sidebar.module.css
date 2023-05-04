@@ -1,25 +1,49 @@
 .sidebar {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    text-align: right;
+    transition: .7s linear;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(29, 33, 38, 0.13), 0px 1px 2px rgba(29, 33, 38, 0.1);
+    border-radius: 0px;
+    font-size: 22px;
 }
 
 .sidebar.open {
+    left: 0;
 }
 
-.background {
-}
+.background {}
 
 .nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .nav a {
+    color: black;
+    text-decoration: none;
+    margin-top: 45px;
 }
 
 .nav a:hover {
+    color: #58ACFF;
 }
 
 .nav a.active {
-}
-.close {
+    color: #0059B2;
+    text-decoration: underline
 }
 
-.close img {
+.close {}
+
+.close img {}
+
+.sidebar button {
+    margin: 1rem;
 }
