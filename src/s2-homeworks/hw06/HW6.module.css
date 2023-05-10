@@ -1,5 +1,14 @@
-.buttonsContainer {
+.buttonsContainer button {
+    margin-right: 24px;
+ 
+    border-radius: 3px;
 }
+.buttonsContainer:first-child{
+    border: none;
+}
+.editableSpanContainer div {
+    color: #0080FF;
+    display: flex;
+    align-items: center;
 
-.editableSpanContainer {
 }

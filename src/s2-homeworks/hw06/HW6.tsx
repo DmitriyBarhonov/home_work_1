@@ -18,7 +18,9 @@ const HW6 = () => {
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = () => {
-        // делают студенты
+        const storedValue = localStorage.getItem('hw6-editable-span-value')
+       if(storedValue !== null) setValue(storedValue)  
+        
 
     }
 
