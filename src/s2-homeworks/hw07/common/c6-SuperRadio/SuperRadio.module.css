@@ -1,15 +1,20 @@
 .radio {
+    
 }
 
 .radio::before {
+   
 }
 
 
 .radio:checked::before {
+background-color: rgb(247, 4, 4);
 }
 
 .label {
+   
 }
 
 .options {
+     
 }
