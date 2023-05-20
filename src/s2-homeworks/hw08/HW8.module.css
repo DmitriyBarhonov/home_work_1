@@ -5,19 +5,35 @@
 }
 
 .users {
+    width: 40%;
 }
 
 .buttonsContainer {
+    text-align: center;
+}
+
+.buttonsContainer button {
+    margin-left: 12px;
 }
 
 .container {
 }
 
+.thead tr {
+    background: #E5E5E5;
+}
 .thead {
+    background: #E5E5E5;
 }
 
 .nameCol {
+    
 }
 
 .ageCol {
+   
+}
+
+tbody tr {
+    border-bottom: 10px solid  #E5E5E5;;
 }
