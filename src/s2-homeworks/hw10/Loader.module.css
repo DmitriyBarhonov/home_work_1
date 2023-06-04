@@ -1,3 +1,8 @@
 .loader {
-    /*свг и/или анимация*/
+    background: url("https://rb.ru/media/upload_tmp/2018/d3.gif");
+    width: 500px;
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
