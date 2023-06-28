@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [loadind, setloadind] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -30,19 +31,19 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
-
+        setloadind(true)
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
+                setloadind(false)
                 setInfo(res.data.info)
                 // console.log(res.data);
                 
             })
             .catch((e) => {
-                // дописать
+                setloadind(false)
                if(e.response.status === 500){
                 setCode('Код 500!')
                 setInfo(e.response.data.info)
@@ -71,7 +72,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={!code}
+                        disabled={loadind}
 
                     >
                         Send true
@@ -81,7 +82,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={loadind}
                     >
                         Send false
                     </SuperButton>
@@ -90,7 +91,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={loadind}
                     >
                         Send undefined
                     </SuperButton>
@@ -99,7 +100,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={loadind}
                     >
                         Send null
                     </SuperButton>
