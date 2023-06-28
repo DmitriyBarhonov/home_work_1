@@ -24,7 +24,7 @@ const HW13 = () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -37,11 +37,27 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-
+                setInfo(res.data.info)
+                // console.log(res.data);
+                
             })
             .catch((e) => {
                 // дописать
-
+               if(e.response.status === 500){
+                setCode('Код 500!')
+                setInfo(e.response.data.info)
+                setImage(error500)
+               } else if(e.response.status === 400){
+                setCode('Код 400!')
+                setInfo(e.response.data.info)
+                setImage(error400)
+               }else {
+                setCode('error unknown')
+                setInfo('')
+                setImage(errorUnknown)
+               }
+                 
+                
             })
     }
 
@@ -55,7 +71,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={!code}
 
                     >
                         Send true
@@ -65,7 +81,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!code}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +90,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!code}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +99,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        disabled={!code}
                     >
                         Send null
                     </SuperButton>
