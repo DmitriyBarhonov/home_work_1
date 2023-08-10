@@ -7,6 +7,7 @@ import HW4 from '../s2-homeworks/hw04/HW4'
 import HW5 from '../s2-homeworks/hw05/HW5'
             {/* yarn run deploy */}
             {/* https://dmitriybarhonov.github.io/home_work_1/ */}
+            // ДЗ 5 сделано до 14
 function App() {
     return (
         <div className={s.App}>
